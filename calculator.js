@@ -40,9 +40,9 @@ function update() {
 // calculate the monthly payment.  The output should be a string
 // that always has 2 decimal places.
 function calculateMonthlyPayment(values) {
-  const actualRate  = monthlyRate(values.rate);
+  const actualRate  = monthlyRate(+values.rate);
   const numerator   = +values.amount * actualRate;
-  const denominator = 1 - Math.pow(1 + actualRate, -numberOfPayments(values.years));
+  const denominator = 1 - Math.pow(1 + actualRate, -numberOfPayments(+values.years));
   return ((numerator / denominator
   ).toFixed(2)
   ).toString();
