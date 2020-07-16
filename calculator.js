@@ -43,7 +43,9 @@ function calculateMonthlyPayment(values) {
   const actualRate  = monthlyRate(values.rate);
   const numerator   = +values.amount * actualRate;
   const denominator = 1 - Math.pow(1 + actualRate, -numberOfPayments(values.years));
-  return  (( numerator / denominator ).toFixed(2)).toString();
+  return ((numerator / denominator
+  ).toFixed(2)
+  ).toString();
 }
 
 // Given a string representing the monthly payment value,
